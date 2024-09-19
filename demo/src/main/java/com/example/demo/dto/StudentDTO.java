@@ -2,6 +2,7 @@ package com.example.demo.dto;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,8 @@ public class StudentDTO {
 	private LocalDate dob;
 
 	private Integer age;
+
+	private List<SubjectDTO> subjects;
 
 	public StudentDTO(String name, String email, LocalDate dob) {
 		this.name = name;
