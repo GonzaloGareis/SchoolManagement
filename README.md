@@ -30,7 +30,7 @@ PUT /api/v1/student/{studentId}:
 Updates an existing student. Expects a StudentDTO object in the request body.
 
 
-Teacher Controller (Base path: /api/v1/teacher):
+- Teacher Controller (Base path: /api/v1/teacher):
 
 GET /api/v1/teacher:
 Retrieves a list of all teachers.
@@ -45,7 +45,7 @@ PUT /api/v1/teacher/{teacherId}:
 Updates an existing teacher. Expects a TeacherDTO object in the request body.
 
 
-Subject Controller (Base path: /api/v1/subject):
+- Subject Controller (Base path: /api/v1/subject):
 
 GET /api/v1/subject:
 Retrieves a list of all subjects.
