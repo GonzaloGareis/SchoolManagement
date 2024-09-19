@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 import org.antlr.v4.runtime.misc.NotNull;
 
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
@@ -37,6 +39,10 @@ public class Student {
 
 	@Transient
 	private Integer age;
+
+	@ManyToMany(mappedBy = "enrolledStudents")
+	private List<Subject> subjects;
+
 
 	public Student(String name, String email, LocalDate dob) {
 		super();
