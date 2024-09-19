@@ -7,5 +7,4 @@ import com.example.demo.entity.Subject;
 
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject, Long> {
-	// You can add custom query methods if needed
 }
