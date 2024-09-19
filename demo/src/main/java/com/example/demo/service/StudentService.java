@@ -37,6 +37,9 @@ public class StudentService {
 		return dtos;
 	}
 
+	/**
+	 * Adds a new student to the database.
+	 */
 	public void addNewStudent(StudentDTO dto) {
 		if (studentRepository.selectExistsEmail(dto.getEmail())) {
 			throw new IllegalStateException("Email Taken");
@@ -46,6 +49,9 @@ public class StudentService {
 		studentRepository.save(entity);
 	}
 
+	/**
+	 * Deletes an existing student from the database
+	 */
 	public void deleteStudent(Long studentId) {
 		boolean exists = studentRepository.existsById(studentId);
 		if (!exists) {
@@ -56,10 +62,13 @@ public class StudentService {
 
 	}
 
+	/**
+	 * Updates the information of an existing student in the database.
+	 */
 	@Transactional
 	public void updateStudent(StudentDTO dto) {
 		Student entity = studentRepository.findById(dto.getId())
-				.orElseThrow(() -> new IllegalStateException("Student with Id " + dto.getId() + "does not exist"));
+				.orElseThrow(() -> new IllegalStateException("Student with Id " + dto.getId() + " does not exist"));
 
 		if (dto.getName() != null && dto.getName().length() > 0 && !Objects.equals(entity.getName(), dto.getName())) {
 			entity.setName(dto.getName());
